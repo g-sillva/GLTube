@@ -1,6 +1,5 @@
 package com.gabriel.gltube.user;
 
-import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
