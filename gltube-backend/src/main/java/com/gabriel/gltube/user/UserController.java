@@ -13,23 +13,23 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping(value = "")
+    @GetMapping
     List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    @GetMapping(value = "/{id}")
-    User getUserById(@PathVariable long id) {
+    @GetMapping(params = { "id" })
+    User getUserById(@RequestParam long id) {
         return userService.getUserByID(id);
     }
 
-    @GetMapping(value = "/{username}")
-    User getUserByUsername(@PathVariable String username) {
+    @GetMapping(params = { "username" })
+    User getUserByUsername(@RequestParam String username) {
         return userService.getUserByUsername(username);
     }
 
-    @GetMapping(value = "/{email}")
-    User getUserByEmail(@PathVariable String email) {
+    @GetMapping(params = { "email" })
+    User getUserByEmail(@RequestParam String email) {
         return userService.getUserByEmail(email);
     }
 
