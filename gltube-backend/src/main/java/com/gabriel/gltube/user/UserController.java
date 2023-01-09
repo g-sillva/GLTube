@@ -1,6 +1,7 @@
 package com.gabriel.gltube.user;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,11 +14,13 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    List<User> getAllUsers() {
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+     List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping(params = { "id" })
+    @PreAuthorize("hasRole('ADMIN')")
     User getUserById(@RequestParam long id) {
         return userService.getUserByID(id);
     }
