@@ -6,21 +6,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("users")
+@RequestMapping("/api/users")
 @AllArgsConstructor
 public class UserController {
 
     private final UserService userService;
 
     @GetMapping
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-     List<User> getAllUsers() {
+    @PreAuthorize("hasRole('ADMIN')")
+    List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping(params = { "id" })
-    @PreAuthorize("hasRole('ADMIN')")
     User getUserById(@RequestParam long id) {
         return userService.getUserByID(id);
     }
