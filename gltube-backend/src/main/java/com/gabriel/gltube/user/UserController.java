@@ -58,4 +58,11 @@ public class UserController {
         if (user != null) return new ResponseEntity<>(user, HttpStatus.OK);
         return new ResponseEntity<>("User with ID '" + id + "' not found.", HttpStatus.NOT_FOUND);
     }
+
+    @PostMapping(value = "/follow", params = { "u_id", "t_id" })
+    @PreAuthorize("hasRole('USER')")
+    ResponseEntity<?> followUser(@RequestParam long u_id, @RequestParam long t_id) {
+
+        return new ResponseEntity<>(u_id + ", " + t_id, HttpStatus.OK);
+    }
 }

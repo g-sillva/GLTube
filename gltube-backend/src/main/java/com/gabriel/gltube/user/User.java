@@ -1,5 +1,6 @@
 package com.gabriel.gltube.user;
 
+import com.gabriel.gltube.follower.Follower;
 import com.gabriel.gltube.role.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,10 +19,13 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String first_name;
     private String last_name;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<Follower> followers;
 
     @Column(unique = true)
     private String username;
