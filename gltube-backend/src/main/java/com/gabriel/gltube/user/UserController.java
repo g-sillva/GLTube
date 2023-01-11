@@ -1,7 +1,10 @@
 package com.gabriel.gltube.user;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,38 +18,44 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN')")
-    List<User> getAllUsers() {
-        return userService.getAllUsers();
+    @PreAuthorize("hasRole('USER')")
+    ResponseEntity<?> getAllUsers() {
+        return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
 
     @GetMapping(params = { "id" })
-    User getUserById(@RequestParam long id) {
-        return userService.getUserByID(id);
+    ResponseEntity<?> getUserById(@RequestParam long id) {
+        User user = userService.getUserByID(id);
+        if (user != null) return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>("User with ID '" + id + "' not found.", HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(params = { "username" })
-    User getUserByUsername(@RequestParam String username) {
-        return userService.getUserByUsername(username);
+    ResponseEntity<?> getUserByUsername(@RequestParam String username) {
+        User user = userService.getUserByUsername(username);
+        if (user != null) return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>("User '" + username + "' not found.", HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(params = { "email" })
-    User getUserByEmail(@RequestParam String email) {
-        return userService.getUserByEmail(email);
+    ResponseEntity<?> getUserByEmail(@RequestParam String email) {
+        User user = userService.getUserByEmail(email);
+        if (user != null) return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>("User '" + email + "' not found.", HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping
-    User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    @DeleteMapping(params = { "id" })
+    @PreAuthorize("hasRole('ADMIN')")
+    ResponseEntity<?> deleteUser(@RequestParam long id) {
+        if (userService.deleteUser(id)) return new ResponseEntity<>("Successfully deleted user!", HttpStatus.OK);
+        return new ResponseEntity<>("User with ID '" + id + "' not found.", HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping
-    void deleteUserById(@PathVariable long id) {
-        userService.deleteUser(id);
-    }
-
-    @PutMapping(value = "/{id}")
-    User updateUser(@PathVariable long id, @RequestBody User userData) {
-        return userService.updateUser(id, userData);
+    @PutMapping(params = { "id" })
+    @PreAuthorize("hasRole('ADMIN')")
+        ResponseEntity<?> updateUser(@RequestParam long id, @RequestBody User userData) {
+        User user = userService.updateUser(id, userData);
+        if (user != null) return new ResponseEntity<>(user, HttpStatus.OK);
+        return new ResponseEntity<>("User with ID '" + id + "' not found.", HttpStatus.NOT_FOUND);
     }
 }

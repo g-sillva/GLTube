@@ -1,15 +1,19 @@
 package com.gabriel.gltube.user;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     // READ (ALL)
     List<User> getAllUsers() {
@@ -18,7 +22,7 @@ public class UserService {
 
     // READ (ID)
     User getUserByID(long id) {
-        return userRepository.findById(id).get();
+        return userRepository.findById(id).orElse(null);
     }
 
     // READ (USERNAME)
@@ -31,25 +35,28 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
-    // CREATE
-    User createUser(User user) {
-        return userRepository.save(user);
-    }
-
     // DELETE
-    void deleteUser(long id) {
-        userRepository.deleteById(id);
+    boolean deleteUser(long id) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            userRepository.delete(user.get());
+            return true;
+        }
+        return false;
     }
 
     // UPDATE
     User updateUser(long id, User userData) {
-        User user = userRepository.findById(id).get();
-        user.setEmail(userData.getEmail());
-        user.setPassword(userData.getPassword());
-        user.setFirst_name(userData.getFirst_name());
-        user.setLast_name(userData.getLast_name());
-        user.setUsername(userData.getUsername());
-
-        return userRepository.save(user);
+        Optional<User> user = userRepository.findById(id);
+        if (user.isPresent()) {
+            User u = user.get();
+            u.setEmail(userData.getEmail());
+            u.setPassword(passwordEncoder.encode(userData.getPassword()));
+            u.setFirst_name(userData.getFirst_name());
+            u.setLast_name(userData.getLast_name());
+            u.setUsername(userData.getUsername());
+            return userRepository.save(u);
+        }
+        return null;
     }
 }
