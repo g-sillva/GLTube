@@ -37,6 +37,6 @@ public class Video {
     private int likes;
 
     @NonNull
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User author;
 }

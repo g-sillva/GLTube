@@ -27,12 +27,14 @@ public class UserService {
 
     // READ (USERNAME)
     User getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+        Optional<User> user = userRepository.findByUsername(username);
+        return user.orElse(null);
     }
 
     // READ (EMAIL)
     User getUserByEmail(String email) {
-        return userRepository.findByEmail(email);
+        Optional<User> user = userRepository.findByEmail(email);
+        return user.orElse(null);
     }
 
     // DELETE

@@ -62,7 +62,6 @@ public class UserController {
     @PostMapping(value = "/follow", params = { "u_id", "t_id" })
     @PreAuthorize("hasRole('USER')")
     ResponseEntity<?> followUser(@RequestParam long u_id, @RequestParam long t_id) {
-
         return new ResponseEntity<>(u_id + ", " + t_id, HttpStatus.OK);
     }
 }
