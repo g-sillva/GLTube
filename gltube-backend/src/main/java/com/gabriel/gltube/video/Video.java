@@ -23,9 +23,12 @@ public class Video {
     @NonNull
     private String title;
     private String description;
+
+    @Lob
     private byte[] thumbnail_file;
 
     @NonNull
+    @Lob
     private byte[] video_file;
 
     @NonNull
