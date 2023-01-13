@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -51,6 +53,12 @@ public class VideoController {
         List<Video> videos = videoService.getVideosByAuthorEmail(email);
         if (videos == null) return new ResponseEntity<>("User with email '" + email + "' not found.", HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(videos, HttpStatus.OK);
+    }
+
+    // ADD VIDEO
+    @RequestMapping(method = RequestMethod.POST, value = "")
+    ResponseEntity<?> handleVideoUpload(@RequestParam MultipartFile file) {
+        return null;
     }
 
 }
