@@ -37,7 +37,8 @@ public class LoadDatabase {
                 "g-sillva",
                 "sslg@gmail.com",
                 passwordEncoder.encode("1234"),
-                new HashSet<>(List.of(user_role)));
+                new HashSet<>(List.of(user_role)),
+                new HashSet<>(List.of()));
 
         User user2 = new User(2,
                 "João",
@@ -46,7 +47,8 @@ public class LoadDatabase {
                 "vitorjj1",
                 "vitor.j10@gmail.com",
                 passwordEncoder.encode("1234"),
-                new HashSet<>(List.of(user_role, admin_role)));
+                new HashSet<>(List.of(user_role, admin_role)),
+                new HashSet<>(List.of()));
 
         return args -> {
             log.info("Preloading " + roleRepository.save(user_role));

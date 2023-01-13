@@ -2,6 +2,7 @@ package com.gabriel.gltube.user;
 
 import com.gabriel.gltube.follower.Follower;
 import com.gabriel.gltube.role.Role;
+import com.gabriel.gltube.video.Video;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,6 +40,9 @@ public class User {
                joinColumns = @JoinColumn(name = "user_id"),
                inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")
+    private Set<Video> author_videos = new HashSet<>();
 
     public User(String username, String email, String password) {
         this.username = username;
