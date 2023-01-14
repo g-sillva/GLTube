@@ -4,7 +4,12 @@ import com.gabriel.gltube.user.User;
 import com.gabriel.gltube.user.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,5 +41,22 @@ public class VideoService {
     List<Video> getVideosByAuthorEmail(String email) {
         Optional<User> u = userRepository.findByEmail(email);
         return u.map(videoRepository::findByAuthor).orElse(null);
+    }
+
+    Video uploadVideo(MultipartFile file, String title, String description, long author_id) throws IOException {
+        Video v = new Video();
+        User u = userRepository.findById(author_id).get();
+
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        if (fileName.contains("..")) throw new RuntimeException("ERROR: Invalid file name: " + fileName);
+
+        v.setTitle(title);
+        v.setDescription(description);
+        v.setDate(new Date());
+        v.setLikes(0);
+        v.setViews(0);
+        v.setVideo_file(file.getBytes());
+        v.setAuthor(u);
+        return videoRepository.save(v);
     }
 }

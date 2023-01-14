@@ -32,7 +32,7 @@ public class VideoController {
     }
 
     // GET VIDEOS BY AUTHOR ID
-    @RequestMapping(method = RequestMethod.GET,value = "/author", params = {"id"})
+    @RequestMapping(method = RequestMethod.GET, value = "/author", params = {"id"})
     ResponseEntity<?> getVideosByAuthorId(@RequestParam long id) {
         List<Video> videos = videoService.getVideosByAuthorId(id);
         if (videos == null) return new ResponseEntity<>("User with ID '" + id + "' not found.", HttpStatus.NOT_FOUND);
@@ -57,8 +57,16 @@ public class VideoController {
 
     // ADD VIDEO
     @RequestMapping(method = RequestMethod.POST, value = "")
-    ResponseEntity<?> handleVideoUpload(@RequestParam MultipartFile file) {
-        return null;
+    ResponseEntity<?> handleVideoUpload(@RequestParam MultipartFile file,
+                                        @RequestParam String title,
+                                        @RequestParam String description,
+                                        @RequestParam long author_id) {
+        try {
+            videoService.uploadVideo(file, title, description, author_id);
+            return new ResponseEntity<>("Upload the file successfully! " + file.getOriginalFilename(), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("ERROR: Could not upload the file:  " + file.getOriginalFilename(), HttpStatus.EXPECTATION_FAILED);
+        }
     }
 
 }

@@ -3,14 +3,17 @@ package com.gabriel.gltube.video;
 import com.gabriel.gltube.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.lang.NonNull;
 
+import java.sql.Clob;
 import java.util.Date;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "videos")
@@ -27,11 +30,9 @@ public class Video {
     @Lob
     private byte[] thumbnail_file;
 
-    @NonNull
     @Lob
     private byte[] video_file;
 
-    @NonNull
     private Date date;
     private int views;
     private int likes;

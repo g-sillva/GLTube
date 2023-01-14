@@ -9,5 +9,4 @@ public class GltubeApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GltubeApplication.class, args);
 	}
-
 }
