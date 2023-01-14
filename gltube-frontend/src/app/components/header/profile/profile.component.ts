@@ -11,7 +11,7 @@ export class ProfileComponent {
   isUserLogged = true;
 
   user_username = "Mateus Andrade"
-  user_followers = 1200;
+  user_followers: number = 1200;
   user_videos = 37;
   user_channel_url = "";
   user_profile_picture = 'assets/user-icon.png';
