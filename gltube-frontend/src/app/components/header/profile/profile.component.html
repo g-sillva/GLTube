@@ -1,25 +1,31 @@
 <div class="header-profile">
-    <img src="https://i.pinimg.com/236x/08/53/37/085337bd3b8103cb15cf3a8c0b61701e.jpg" alt="" class="profile-img">
-    <div class="profile-modal">
-        <div class="header">
-            <img src="https://i.pinimg.com/236x/08/53/37/085337bd3b8103cb15cf3a8c0b61701e.jpg" alt="" class="profile-img">
-            <div class="header-text">
-                <h2>Mateus Andrade</h2>
-                <p>1.2K Followers ° 37 Videos</p>
+    <img (click)="handleProfileClick()" [src]="getImage()" alt="" class="profile-img">
+    <div class="profile-modal" *ngIf="isProfileModalOpen">
+        <div class="header" [ngClass]="{'header-text-center': !isUserLogged}">
+            <img [src]="getImage()" alt="" class="profile-img">
+            <div class="header-text" [ngClass]="{'center-text': !isUserLogged}">
+                <h2>{{ isUserLogged ? user_username : "User" }}</h2>
+                <p *ngIf="isUserLogged">{{ user_followers }} Followers ° {{ user_videos }} Videos</p>
             </div>
         </div>
         <hr>
         <ul>
-            <li>
-                <a href="">
+            <li *ngIf="isUserLogged">
+                <a [href]="user_channel_url">
                     <i class="fa-regular fa-circle-user"></i>
                     <p>My Channel</p>
                 </a>
             </li>
-            <li>
+            <li *ngIf="isUserLogged">
                 <a href="">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <p>Log out</p>
+                </a>
+            </li>
+            <li *ngIf="!isUserLogged">
+                <a href="">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <p>Log in</p>
                 </a>
             </li>
         </ul>
