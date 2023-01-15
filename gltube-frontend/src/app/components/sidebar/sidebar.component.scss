@@ -2,8 +2,8 @@ nav {
     width: 240px;
     height: 100vh;
     background: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 0 10px 10px 0;
+    box-shadow: rgba(75, 75, 76, 0.2) 0px 7px 10px 2px;
     display: flex;
     width: 100%;
     max-width: 250px;
@@ -12,9 +12,14 @@ nav {
     align-items: flex-start;
     gap: 2rem;
     transition: all .3s ease-in-out;
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
 
     .fa-bars {
         font-size: 24px;
+        margin-top: 1.5rem;
         cursor: pointer;
         transition: all .3s ease-out;
     }
@@ -26,6 +31,7 @@ nav {
 
     ul {
         width: 100%;
+        margin-bottom: 1rem;
         transition: all .3s ease-out;
 
         li {
@@ -67,33 +73,40 @@ nav {
         }
     }
 
-    hr {
+    .lists {
         width: 100%;
-        max-width: 200px;
-        overflow: hidden;
-        opacity: .5;
-        margin: 0 auto;
-        transition: all .3s ease-out;
+
+        hr {
+            width: 100%;
+            max-width: 200px;
+            overflow: hidden;
+            opacity: .5;
+            margin: 0 auto;
+            transition: all .3s ease-out;
+        }
     }
 }
 
 .sidebar-small {
     max-width: 85px;
+    box-shadow: none;
     gap: 0;
 
     .fa-bars {
         margin-bottom: 2rem;
     }
 
-    hr {
-        max-width: 0;
-        opacity: 0;
+    .lists {
+        hr {
+            max-width: 0;
+            opacity: 0;
+        }
     }
-    
 
     ul {
         display: flex;
         flex-direction: column;
+        margin-bottom: 0;
 
         li {
             gap: 2rem;

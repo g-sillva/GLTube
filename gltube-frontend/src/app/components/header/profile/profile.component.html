@@ -5,7 +5,7 @@
             <img [src]="getImage()" alt="" class="profile-img">
             <div class="header-text" [ngClass]="{'center-text': !isUserLogged}">
                 <h2>{{ isUserLogged ? user_username : "User" }}</h2>
-                <p *ngIf="isUserLogged">{{ user_followers | thousandSuffix : 1 }} Followers ° {{ user_videos }} Videos</p>
+                <p *ngIf="isUserLogged">{{ user_followers | thousandSuffix : 1 }} Followers ° {{ user_videos | thousandSuffix : 1 }} Videos</p>
             </div>
         </div>
         <hr>

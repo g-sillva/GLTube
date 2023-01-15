@@ -1,35 +1,14 @@
 <nav [ngClass]="{'sidebar-small': !isSidebarExpanded}">
     <i (click)="isSidebarExpanded = !isSidebarExpanded" class="fa-solid fa-bars"></i>
-    <ul>
-        <li class="active">
-            <i class="fa-solid fa-house"></i>
-            <p>Home</p>
-        </li>
-        <li>
-            <i class="fa-solid fa-display"></i>
-            <p>Subscriptions</p>
-        </li>
-    </ul>
-    <hr>
-    <ul>
-        <li>
-            <i class="fa-solid fa-film"></i>
-            <p>Create</p>
-        </li>
-        <li>
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            <p>History</p>
-        </li>
-        <li>
-            <i class="fa-solid fa-list-ul"></i>
-            <p>My list</p>
-        </li>
-        <li>
-            <i class="fa-solid fa-thumbs-up"></i>
-            <p>Liked videos</p>
-        </li>
-    </ul>
-    <hr>
+    <div *ngFor="let list of items_list; index as listIndex" class="lists">
+        <ul>
+            <li *ngFor="let item of list.items; index as itemIndex" (click)="handleSelectItem(listIndex, itemIndex)" [ngClass]="{'active': item.selected}">
+                <i [class]="item.icon"></i>
+                <p>{{ item.label }}</p>
+            </li>
+        </ul>
+        <hr>
+    </div>
     <ul class="bottom-ul">
         <li><a href="/">About</a></li>
         <li><a href="/">Settings</a></li>

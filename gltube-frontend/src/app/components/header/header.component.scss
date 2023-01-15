@@ -5,6 +5,11 @@ header {
     height: 80px;
     padding: 0 2rem;
     background: white;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
 
     app-searchbar {
         margin-left: auto;
