@@ -1,4 +1,17 @@
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    padding: 0 2rem;
+    background: white;
 
-    
+    app-searchbar {
+        margin-left: auto;
+    }
+
+    app-profile {
+        margin-left: auto;
+        position: relative;
+    }
 }

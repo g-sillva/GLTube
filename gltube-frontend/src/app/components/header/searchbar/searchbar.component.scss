@@ -4,8 +4,9 @@
     border: 1px solid #EBEFF0;
     border-radius: 50px;
     width: 100vw;
-    height: 40px;
     max-width: 30vw;
+    min-width: 300px;
+    height: 40px;
     position: relative;
     transition: all .1s ease-in-out;
 
