@@ -1,0 +1,14 @@
+<a [href]="video_url" class="card">
+    <div class="thumbnail-container">
+        <img [src]="thumbnail_url" alt="">
+        <p>{{ video_length }}</p>
+    </div>
+    <h2>{{ video_title }}</h2>
+    <div class="info">
+        <img [src]="user_profile_img_url" alt="">
+        <div class="data">
+            <h3>{{ user_username }}</h3>
+            <p>{{ video_views | thousandSuffix : 1 }} Views ° {{ video_date }}</p>
+        </div>
+    </div>
+</a>

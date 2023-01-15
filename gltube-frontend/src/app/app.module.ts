@@ -9,6 +9,7 @@ import { ProfileComponent } from './components/header/profile/profile.component'
 import { ThousandSuffixPipe } from './pipes/ThousandSufixPipe.pipe';
 import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BasicCardComponent } from './components/cards/basic-card/basic-card.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ThousandSuffixPipe,
     SearchbarComponent,
     SidebarComponent,
+    BasicCardComponent,
   ],
   imports: [
     BrowserModule,
