@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  search_text = "";
-
-  clearInput() {
-    this.search_text = "";
-  }
 }

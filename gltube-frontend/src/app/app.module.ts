@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/header/profile/profile.component';
 import { ThousandSuffixPipe } from './pipes/ThousandSufixPipe.pipe';
+import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ProfileComponent,
-    ThousandSuffixPipe
+    ThousandSuffixPipe,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

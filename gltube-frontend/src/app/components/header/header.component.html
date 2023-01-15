@@ -1,11 +1,4 @@
 <header>
-    <div class="searchbar">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input [(ngModel)]="search_text" type="text" placeholder="Search">
-        <i class="fa-solid fa-xmark clean-icon" 
-           [ngClass]="{'show-clean-icon': search_text.length > 0}"
-           (click)="clearInput()"></i>
-        <i class="fa-solid fa-angle-right click-icon"></i>
-    </div>
+    <app-searchbar></app-searchbar>
     <app-profile></app-profile>
 </header>
