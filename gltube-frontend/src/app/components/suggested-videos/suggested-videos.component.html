@@ -1,0 +1,15 @@
+<section class="suggested-videos">
+    <h3>Suggested</h3>
+    <div class="videos-container">
+        <basic-card-component 
+        *ngFor="let video of videos"
+        [video_url]="video.video_url"
+        [thumbnail_url]="video.thumbnail_url"
+        [video_title]="video.video_title"
+        [video_length]="video.video_length"
+        [user_profile_img_url]="video.user_profile_img_url"
+        [user_username]="video.user_username"
+        [video_views]="video.video_views"
+        [video_date]="video.video_date"></basic-card-component>
+    </div>
+</section>

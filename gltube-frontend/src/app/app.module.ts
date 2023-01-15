@@ -10,6 +10,7 @@ import { ThousandSuffixPipe } from './pipes/ThousandSufixPipe.pipe';
 import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BasicCardComponent } from './components/cards/basic-card/basic-card.component';
+import { SuggestedVideosComponent } from './components/suggested-videos/suggested-videos.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BasicCardComponent } from './components/cards/basic-card/basic-card.com
     SearchbarComponent,
     SidebarComponent,
     BasicCardComponent,
+    SuggestedVideosComponent,
   ],
   imports: [
     BrowserModule,
