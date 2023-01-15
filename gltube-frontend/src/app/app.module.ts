@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProfileComponent } from './components/header/profile/profile.component';
 import { ThousandSuffixPipe } from './pipes/ThousandSufixPipe.pipe';
 import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SearchbarComponent } from './components/header/searchbar/searchbar.comp
     HeaderComponent,
     ProfileComponent,
     ThousandSuffixPipe,
-    SearchbarComponent
+    SearchbarComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
