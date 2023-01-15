@@ -2,39 +2,60 @@ nav {
     width: 240px;
     height: 100vh;
     background: white;
-    border: 1px solid whitesmoke;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 0 10px 10px 0;
     display: flex;
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+    transition: all .3s ease-in-out;
 
     .fa-bars {
         font-size: 24px;
         cursor: pointer;
+        transition: all .3s ease-out;
     }
 
     i {
         font-size: 20px;
-        padding: 8px 1rem;
+        padding: 8px 2rem;
     }
 
     ul {
         width: 100%;
+        transition: all .3s ease-out;
 
         li {
             display: flex;
             align-items: center;
             gap: 10px;
+            width: 100%;
             cursor: pointer;
-            transition: all .1s ease-in-out;
+            border-radius: 10px;
+            padding-left: 1.2rem;
             opacity: .9;
+            transition: all .3s ease-out;
 
             &:hover {
                 background: #f5f5f5;
             }
 
             a {
-                padding: 8px 1rem;
+                padding: 8px 2rem;
+            }
+
+            p, a {
+                white-space: nowrap;
+                word-break: keep-all;
+                transition: all .3s ease-out;
+            }
+
+            i {
+                padding: 15px;
+                border-radius: 50%;
             }
         }
 
@@ -47,7 +68,47 @@ nav {
     }
 
     hr {
-        width: 80%;
+        width: 100%;
+        max-width: 200px;
+        overflow: hidden;
+        opacity: .5;
         margin: 0 auto;
+        transition: all .3s ease-out;
+    }
+}
+
+.sidebar-small {
+    max-width: 85px;
+    gap: 0;
+
+    .fa-bars {
+        margin-bottom: 2rem;
+    }
+
+    hr {
+        max-width: 0;
+        opacity: 0;
+    }
+    
+
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        li {
+            gap: 2rem;
+
+            &:hover {
+                background: white;
+
+                i {
+                    background: #f5f5f5;
+                }
+            }
+
+            p, a {
+                opacity: 0;
+            }
+        }
     }
 }

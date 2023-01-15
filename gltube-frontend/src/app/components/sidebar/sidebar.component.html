@@ -1,5 +1,5 @@
-<nav>
-    <i class="fa-solid fa-bars"></i>
+<nav [ngClass]="{'sidebar-small': !isSidebarExpanded}">
+    <i (click)="isSidebarExpanded = !isSidebarExpanded" class="fa-solid fa-bars"></i>
     <ul>
         <li class="active">
             <i class="fa-solid fa-house"></i>
@@ -30,7 +30,7 @@
         </li>
     </ul>
     <hr>
-    <ul>
+    <ul class="bottom-ul">
         <li><a href="/">About</a></li>
         <li><a href="/">Settings</a></li>
         <li><a href="/">Help</a></li>
