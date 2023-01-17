@@ -11,6 +11,8 @@ import { SearchbarComponent } from './components/header/searchbar/searchbar.comp
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BasicCardComponent } from './components/cards/basic-card/basic-card.component';
 import { SuggestedVideosComponent } from './components/suggested-videos/suggested-videos.component';
+import { PopBigCardComponent } from './components/cards/pop-big-card/pop-big-card.component';
+import { PopularVideosComponent } from './components/popular-videos/popular-videos.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { SuggestedVideosComponent } from './components/suggested-videos/suggeste
     SidebarComponent,
     BasicCardComponent,
     SuggestedVideosComponent,
+    PopBigCardComponent,
+    PopularVideosComponent,
   ],
   imports: [
     BrowserModule,
