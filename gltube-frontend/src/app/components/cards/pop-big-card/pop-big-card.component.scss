@@ -1,6 +1,6 @@
 .container {
-    width: 625px;
-    height: 493px;
+    height: 100%;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -30,9 +30,13 @@
 
     h2 {
         font-weight: 500;
-        font-size: 32px;
+        font-size: calc(16px + .4vw);
         padding: 0 2rem 1rem 2rem;
         margin-top: auto;
+    }
+
+    .big-title {
+        font-size: calc(20px + 1.8vw);
     }
 
     .bottom {

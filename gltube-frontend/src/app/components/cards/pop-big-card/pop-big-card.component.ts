@@ -9,6 +9,8 @@ export class PopBigCardComponent {
 
   @Input() url = "/";
 
+  @Input() isPrincipal = false;
+
   @Input() thumbnail = "";
   
   @Input() title = "Video title...";
