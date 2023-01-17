@@ -1,3 +1,13 @@
 <section>
-    <pop-big-card-component></pop-big-card-component>
+    <pop-big-card-component 
+        *ngFor="let video of videos"
+        [url]="video.url"
+        [thumbnail]="video.thumbnail"
+        [title]="video.title"
+        [author_profile_image]="video.author_profile_image"
+        [author_username]="video.author_username"
+        [views]="video.views"
+        [date]="video.date"
+        [length]="video.length"
+    ></pop-big-card-component>
 </section>
