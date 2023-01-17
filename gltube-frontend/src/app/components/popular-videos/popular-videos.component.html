@@ -1,5 +1,7 @@
 <section>
-    <pop-big-card-component 
+    <h3>Popular</h3>
+    <div class="videos-container">
+        <pop-big-card-component 
         *ngFor="let video of videos"
         [url]="video.url"
         [isPrincipal]="video.isPrincipal"
@@ -11,4 +13,5 @@
         [date]="video.date"
         [length]="video.length"
     ></pop-big-card-component>
+    </div>
 </section>
