@@ -14,6 +14,8 @@ import { SuggestedVideosComponent } from './components/suggested-videos/suggeste
 import { PopBigCardComponent } from './components/cards/pop-big-card/pop-big-card.component';
 import { PopularVideosComponent } from './components/popular-videos/popular-videos.component';
 import { TagsFilterComponent } from './components/suggested-videos/tags-filter/tags-filter.component';
+import { VideoComponent } from './components/video/video.component';
+import { MainContentComponent } from './components/video/main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { TagsFilterComponent } from './components/suggested-videos/tags-filter/t
     PopBigCardComponent,
     PopularVideosComponent,
     TagsFilterComponent,
+    VideoComponent,
+    MainContentComponent,
   ],
   imports: [
     BrowserModule,
