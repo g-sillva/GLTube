@@ -13,6 +13,7 @@ import { BasicCardComponent } from './components/cards/basic-card/basic-card.com
 import { SuggestedVideosComponent } from './components/suggested-videos/suggested-videos.component';
 import { PopBigCardComponent } from './components/cards/pop-big-card/pop-big-card.component';
 import { PopularVideosComponent } from './components/popular-videos/popular-videos.component';
+import { TagsFilterComponent } from './components/suggested-videos/tags-filter/tags-filter.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PopularVideosComponent } from './components/popular-videos/popular-vide
     SuggestedVideosComponent,
     PopBigCardComponent,
     PopularVideosComponent,
+    TagsFilterComponent,
   ],
   imports: [
     BrowserModule,

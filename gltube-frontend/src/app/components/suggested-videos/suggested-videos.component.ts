@@ -17,7 +17,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://pfps.gg/assets/pfps/8165-serious-paisen-senpai.png",
       "user_username": "Serious Paisen",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Gaming"],
     },
     {
       "video_url": "/",
@@ -27,7 +28,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/ytc/AMLnZu9UWrGceKWaqm8AF89vuxrEt8MO3E59qOoQ785Lew=s900-c-k-c0x00ffffff-no-rj",
       "user_username": "freeCodeCamp.org",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Coding"],
     },
     {
       "video_url": "/",
@@ -37,7 +39,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnlYmm2_-xfQEP0vtcnh4W5nqWSbSgX0qIhuO2v71cuhQT1mpoflagWMs3WQ4Mfm14s50&usqp=CAU",
       "user_username": "Just Mark",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Drawing", "Criativity"],
     },
     {
       "video_url": "/",
@@ -47,7 +50,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/ytc/AMLnZu-JSIO_rqnxRrj7XElfGHXgCXm7sQlH7TeyLZZ-6w=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "Great Big Story",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Technology"],
     },
     {
       "video_url": "/",
@@ -57,7 +61,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/uWEgkZKIZCULuZXtpB8RxVdbiT2Z5fuNOWYd_w7454g5VYg54bfex61KkvNOoprVvWOGAnA4kg=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "O Primo Rico",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Finance"],
     },
     {
       "video_url": "/",
@@ -67,7 +72,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://i.redd.it/mi2iuw8xt1b41.jpg",
       "user_username": "Random Coder",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Coding"],
     },
     {
       "video_url": "/",
@@ -77,7 +83,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/xIBr-DDHkaOif1UjsVmVIMOJdbrLdGq7HNWq6vcQQHr_I52DRbJMN3sQnc_8PL70DqjKTdSx=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "Funny Local News",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Comedy"],
     },
     {
       "video_url": "/",
@@ -87,7 +94,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/ytc/AMLnZu-kftf__NlEjzAzeegWk9_lMW7t3r8vvaPWlQRXEA=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "I Did a Thing",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Criativity"],
     },
     {
       "video_url": "/",
@@ -97,7 +105,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/ytc/AMLnZu8a8Vwo9B64i2KPqQDGvBvHn0oOEUGWrIlVw1vKFg=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "Nuno Agonia",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Technology"],
     },
     {
       "video_url": "/",
@@ -107,7 +116,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/ytc/AMLnZu-T7N47MAPoQT-zyteLBYfDSqYH7u3eNzJbXGK90g=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "Balanço Geral",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Curiosity"],
     },
     {
       "video_url": "/",
@@ -117,7 +127,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/2zH0h1ZzITWWvlLGLMUGvJdlIAENxKNl9HEpxnDf5nUhiV3KW7HivfqmAuMgH4mOpK7Kaf31=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "Cortes do Venus [OFICIAL]",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Comedy"],
     },
     {
       "video_url": "/",
@@ -127,7 +138,8 @@ export class SuggestedVideosComponent {
       "user_profile_img_url": "https://yt3.ggpht.com/ytc/AMLnZu9HLp8cv9c4hHHusfZisSfkNhN0la8Q1C671wGOEA=s88-c-k-c0x00ffffff-no-rj",
       "user_username": "Insider",
       "video_views": Math.floor(Math.random() * 100000),
-      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago"
+      "video_date": Math.floor(Math.random() * 11) + 1 + " months ago",
+      "tags": ["Drawing", "Criativity"],
     },
   ]
 }
