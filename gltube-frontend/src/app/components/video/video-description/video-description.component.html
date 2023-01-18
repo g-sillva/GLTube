@@ -1,0 +1,9 @@
+<div class="description">
+    <p class="label">Description</p>
+    <div class="content-container" [ngClass]="{'expanded-content': isExpanded}">
+        <div class="content">
+            <pre>{{ description }}</pre>
+        </div>
+        <p (click)="handleExpandClick()" class="show-more" *ngIf="isExpandable">{{ isExpanded ? "Show less" : "Show more"}}</p>
+    </div>
+</div>

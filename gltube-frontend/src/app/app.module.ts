@@ -16,6 +16,7 @@ import { PopularVideosComponent } from './components/popular-videos/popular-vide
 import { TagsFilterComponent } from './components/suggested-videos/tags-filter/tags-filter.component';
 import { VideoComponent } from './components/video/video.component';
 import { MainContentComponent } from './components/video/main-content/main-content.component';
+import { VideoDescriptionComponent } from './components/video/video-description/video-description.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MainContentComponent } from './components/video/main-content/main-conte
     TagsFilterComponent,
     VideoComponent,
     MainContentComponent,
+    VideoDescriptionComponent,
   ],
   imports: [
     BrowserModule,
