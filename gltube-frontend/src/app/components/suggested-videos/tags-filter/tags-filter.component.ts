@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'tags-filter-component',
@@ -13,5 +13,12 @@ export class TagsFilterComponent {
 
   handleSelectTag(i: number) {
     this.selectedTag = i;
+  }
+
+  @Output()
+  onClick = new EventEmitter<number>();
+
+  handleOutputClick() {
+    this.onClick.emit(this.selectedTag);
   }
 }

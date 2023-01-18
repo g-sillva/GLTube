@@ -1,8 +1,8 @@
 <section class="suggested-videos">
-    <tags-filter-component [tags]="tags"></tags-filter-component>
+    <tags-filter-component [tags]="tags" (onClick)="sortVideos($event)"></tags-filter-component>
     <div class="videos-container">
         <basic-card-component 
-        *ngFor="let video of videos"
+        *ngFor="let video of displayedVideos"
         [video_url]="video.video_url"
         [thumbnail_url]="video.thumbnail_url"
         [video_title]="video.video_title"

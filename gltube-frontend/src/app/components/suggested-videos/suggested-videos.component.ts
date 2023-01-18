@@ -142,6 +142,7 @@ export class SuggestedVideosComponent {
       "tags": ["Drawing", "Criativity"],
     },
   ]
+  displayedVideos = this.videos;
 
   tags = ["All"].concat(this.getFrequentTags());
 
@@ -157,5 +158,14 @@ export class SuggestedVideosComponent {
 
     const sortedMap = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
     return Array.from(sortedMap.keys())
+  }
+
+  sortVideos(tagIndex: number) {
+    if (tagIndex === 0) {
+      this.displayedVideos = this.videos;
+      return;
+    }
+    let selectedTag = this.tags[tagIndex];
+    this.displayedVideos = this.videos.filter(v => v.tags.includes(selectedTag));
   }
 }

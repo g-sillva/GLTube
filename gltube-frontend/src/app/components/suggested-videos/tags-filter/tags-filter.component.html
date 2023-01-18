@@ -1,5 +1,6 @@
 <ul>
     <li *ngFor="let tag of tags; index as i"
         [ngClass]="{'selected': i === selectedTag}"
-        (click)="handleSelectTag(i)">{{ tag }}</li>
+        (click)="handleSelectTag(i)"
+        (click)="handleOutputClick()">{{ tag }}</li>
 </ul>
