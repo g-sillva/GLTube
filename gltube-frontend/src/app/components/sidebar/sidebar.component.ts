@@ -17,7 +17,7 @@ export class SidebarComponent {
         "icon": "fa-solid fa-house",
         "label": "Home",
         "url": "/",
-        "selected": false
+        "selected": true
       },
       {
         "icon": "fa-solid fa-display",
