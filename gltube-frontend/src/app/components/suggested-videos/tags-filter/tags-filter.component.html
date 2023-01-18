@@ -1,5 +1,5 @@
 <ul>
-    <li class="selected">All</li>
-    <li>Music</li>
-    <li>Comedy</li>
+    <li *ngFor="let tag of tags; index as i"
+        [ngClass]="{'selected': i === selectedTag}"
+        (click)="handleSelectTag(i)">{{ tag }}</li>
 </ul>

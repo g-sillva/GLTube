@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class TagsFilterComponent {
 
+  selectedTag = 0;
+  tags = ["All", "Music", "Comedy"];
+
+  handleSelectTag(i: number) {
+    this.selectedTag = i;
+  }
 }
