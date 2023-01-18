@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'tags-filter-component',
@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class TagsFilterComponent {
 
   selectedTag = 0;
-  tags = ["All", "Music", "Comedy"];
+
+  @Input() tags = ["All"];
 
   handleSelectTag(i: number) {
     this.selectedTag = i;

@@ -142,4 +142,20 @@ export class SuggestedVideosComponent {
       "tags": ["Drawing", "Criativity"],
     },
   ]
+
+  tags = ["All"].concat(this.getFrequentTags());
+
+
+  getFrequentTags() {
+    const map = new Map();
+    for (let video of this.videos) {
+      for (let tag of video.tags) {
+        if (map.get(tag) === undefined) map.set(tag, 1);
+        else map.set(tag, map.get(tag) + 1);
+      }
+    }
+
+    const sortedMap = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
+    return Array.from(sortedMap.keys())
+  }
 }
