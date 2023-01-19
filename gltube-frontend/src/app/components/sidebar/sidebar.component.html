@@ -1,9 +1,15 @@
 <nav [ngClass]="{'sidebar-small': !isSidebarExpanded}">
-    <i (click)="isSidebarExpanded = !isSidebarExpanded" class="fa-solid fa-bars"></i>
+    <div class="sidebar-bars" (click)="isSidebarExpanded = !isSidebarExpanded">
+        <span class="b-t"></span>
+        <span class="b-m"></span>
+        <span class="b-b"></span>
+    </div>
     <div *ngFor="let list of items_list; index as listIndex" class="lists">
         <ul>
             <li *ngFor="let item of list.items; index as itemIndex" (click)="handleSelectItem(listIndex, itemIndex)" [ngClass]="{'active': item.selected}">
-                <i [class]="item.icon"></i>
+                <div class="icon-wrapper">
+                    <img [src]="item.icon" alt="">
+                </div>
                 <p>{{ item.label }}</p>
             </li>
         </ul>

@@ -7,20 +7,20 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
-  isSidebarExpanded = false;
+  isSidebarExpanded = true;
   selectedItem = 0;
 
   items_list = [
     {
       "items": [
       {
-        "icon": "fa-solid fa-house",
+        "icon": "assets/house.svg",
         "label": "Home",
         "url": "/",
         "selected": true
       },
       {
-        "icon": "fa-solid fa-display",
+        "icon": "assets/display.svg",
         "label": "Subscriptions",
         "url": "/",
         "selected": false,
@@ -30,25 +30,25 @@ export class SidebarComponent {
     {
       "items": [
         {
-          "icon": "fa-solid fa-film",
+          "icon": "assets/camera.svg",
           "label": "Create",
           "url": "/",
           "selected": false
         },
         {
-          "icon": "fa-solid fa-clock-rotate-left",
+          "icon": "assets/clock-history.svg",
           "label": "History",
           "url": "/",
           "selected": false
         },
         {
-          "icon": "fa-solid fa-list-ul",
+          "icon": "assets/list-task.svg",
           "label": "My list",
           "url": "/",
           "selected": false
         },
         {
-          "icon": "fa-solid fa-thumbs-up",
+          "icon": "assets/hand-thumbs-up.svg",
           "label": "Liked videos",
           "url": "/",
           "selected": false

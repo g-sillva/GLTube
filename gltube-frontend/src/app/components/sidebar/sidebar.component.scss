@@ -11,18 +11,34 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    transition: all .3s ease-in-out;
     z-index: 9999;
     position: fixed;
     left: 0;
     top: 0;
 
-    .fa-bars {
-        font-size: 24px;
-        margin-top: 1.2rem;
+    .sidebar-bars {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 99999;
+        margin-top: .5rem;
+        margin-left: 1.8rem;
         cursor: pointer;
-        color: #333333;
-        transition: all .3s ease-out;
+
+        &:hover {
+            background: #f5f5f5;
+        }
+
+        span {
+            width: 50%;
+            height: 2px;
+            margin: 3px 0;
+            background: #585858;
+        }
     }
 
     i {
@@ -33,18 +49,16 @@ nav {
     ul {
         width: 100%;
         margin-bottom: 1rem;
-        transition: all .3s ease-out;
 
         li {
             display: flex;
             align-items: center;
             gap: 10px;
-            width: 100%;
+            width: 95%;
             cursor: pointer;
-            border-radius: 10px;
+            border-radius: 50px;
             padding-left: 1.2rem;
             opacity: .9;
-            transition: all .3s ease-out;
 
             &:hover {
                 background: #f5f5f5;
@@ -56,20 +70,37 @@ nav {
 
             p, a {
                 white-space: nowrap;
+                color: black;
+                font-size: 14px;
                 word-break: keep-all;
-                transition: all .3s ease-out;
             }
 
-            i {
-                padding: 15px;
+            .icon-wrapper {
+                width: 20px;
                 border-radius: 50%;
+                padding: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+                margin-left: 15px;
+
+                &:hover {
+                    background: #f5f5f5;
+                }
+            }
+
+            img {
+                width: 100%;
             }
         }
 
         .active {
             opacity: 1;
-            i, p {
-                color: #425DEC;
+
+            p {
+                font-weight: 500;
+                opacity: 1;
             }
         }
     }
@@ -83,7 +114,6 @@ nav {
             overflow: hidden;
             opacity: .5;
             margin: 0 auto;
-            transition: all .3s ease-out;
         }
     }
 }
@@ -91,38 +121,13 @@ nav {
 .sidebar-small {
     max-width: 85px;
     box-shadow: none;
-    gap: 0;
-
-    .fa-bars {
-        margin-bottom: 2rem;
-    }
+    background: transparent;
 
     .lists {
-        hr {
-            max-width: 0;
-            opacity: 0;
-        }
+        display: none;
     }
 
     ul {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0;
-
-        li {
-            gap: 2rem;
-
-            &:hover {
-                background: white;
-
-                i {
-                    background: #f5f5f5;
-                }
-            }
-
-            p, a {
-                opacity: 0;
-            }
-        }
+        display: none;
     }
 }
