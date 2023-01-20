@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
-  isSidebarExpanded = true;
+  isSidebarExpanded = false;
   selectedItem = 0;
 
   items_list = [
