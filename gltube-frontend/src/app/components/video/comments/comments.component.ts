@@ -76,8 +76,11 @@ export class CommentsComponent {
   }
 
   handleShowReplies(ev: any) {
-    
     this.isRepliesOpen = ev;
+  }
+
+  handleSuccessClick() {
+    console.log("Hi");
   }
 
 }

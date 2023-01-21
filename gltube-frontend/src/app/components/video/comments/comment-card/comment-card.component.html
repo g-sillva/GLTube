@@ -1,25 +1,31 @@
 <div class="card" [ngClass]="{'reply-com': isReply}">
-    <img [src]="author_profile_image" alt="">
-    <div class="container">
-        <div class="top">
-            <div class="user">
-                <h3>{{ author_username }}</h3>
-                <p *ngIf="isReply"> >>{{ reply_username }}</p>
+    <div class="card-container">
+        <img [src]="author_profile_image" alt="">
+        <div class="container">
+            <div class="top">
+                <div class="user">
+                    <h3>{{ author_username }}</h3>
+                    <p *ngIf="isReply"> >>{{ reply_username }}</p>
+                </div>
+                <p>{{ date }}</p>
             </div>
-            <p>{{ date }}</p>
-        </div>
-        <p class="content">{{ content }}</p>
-        <div class="bottom">
-            <div class="reply-container">
-                <p class="reply-btn">reply</p>
-                <i class="fa-solid fa-angle-down"></i>
-                <p *ngIf="replies_qnt > 0" (click)="handleShowRepliesClick($event)" [ngClass]="{'replies-btn-active': isShowRepliesOpen}">{{replies_qnt}} replies</p>
-            </div>
-            <div class="like-container">
-                <i class="fa-solid fa-hands-clapping"></i>
-                <span class="vertical-line"></span>
-                <p>{{ likes }}</p>
+            <p class="content">{{ content }}</p>
+            <div class="bottom">
+                <div class="reply-container">
+                    <p class="reply-btn" (click)="handleReplyCommentClick()">reply</p>
+                    <i [class]="isReplyCommentOpen ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'"></i>
+                    <p *ngIf="replies_qnt > 0" (click)="handleShowRepliesClick($event)" [ngClass]="{'replies-btn-active': isShowRepliesOpen}">{{replies_qnt}} replies</p>
+                </div>
+                <div class="like-container">
+                    <i class="fa-solid fa-hands-clapping"></i>
+                    <span class="vertical-line"></span>
+                    <p>{{ likes }}</p>
+                </div>
             </div>
         </div>
     </div>
+    <add-comment-component 
+    *ngIf="isReplyCommentOpen" 
+    (onSuccess)="handleSuccessClick()"
+    successLabel="Reply"></add-comment-component>
 </div>

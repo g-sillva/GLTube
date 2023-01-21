@@ -20,6 +20,7 @@ import { VideoDescriptionComponent } from './components/video/video-description/
 import { VideoSugCardComponent } from './components/cards/video-sug-card/video-sug-card.component';
 import { CommentsComponent } from './components/video/comments/comments.component';
 import { CommentCardComponent } from './components/video/comments/comment-card/comment-card.component';
+import { AddCommentComponent } from './components/video/comments/add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { CommentCardComponent } from './components/video/comments/comment-card/c
     VideoSugCardComponent,
     CommentsComponent,
     CommentCardComponent,
+    AddCommentComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,60 @@
+.reply-form-container {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #BCBCBC;
+            padding: 5px;
+
+            &:focus {
+                border-color: black;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            align-self: flex-end;
+
+            button {
+                padding: 5px 15px;
+                outline: none;
+                border: none;
+                background: none;
+                cursor: pointer;
+                border-radius: 50px;
+                font-weight: 600;
+            }
+
+            .comment-btn {
+                border: 1px solid #eaeaea;
+                background-color: #eaeaea;
+                transition: all .1s ease-out;
+
+                &:hover {
+                    background-color: #d6d6d6;
+                }
+            }
+        }
+    }
+}

@@ -16,7 +16,7 @@ export class CommentCardComponent {
   @Input() author_channel_url = "/";
 
   @Input() author_username = "User";
-
+  
   @Input() date = "right now";
 
   @Input() likes = 0;
@@ -28,9 +28,20 @@ export class CommentCardComponent {
   @Output() showReplies = new EventEmitter<any>();
 
   isShowRepliesOpen = false;
+  isReplyCommentOpen = false;
 
   handleShowRepliesClick(ev: any) {
     this.isShowRepliesOpen = !this.isShowRepliesOpen;
     this.showReplies.emit(this.isShowRepliesOpen);
+  }
+
+  handleReplyCommentClick() {
+    this.isReplyCommentOpen = !this.isReplyCommentOpen;
+    this.isShowRepliesOpen = false;
+    this.handleShowRepliesClick(true);
+  }
+
+  handleSuccessClick() {
+    console.log("Hi");
   }
 }
