@@ -18,6 +18,8 @@ import { VideoComponent } from './components/video/video.component';
 import { MainContentComponent } from './components/video/main-content/main-content.component';
 import { VideoDescriptionComponent } from './components/video/video-description/video-description.component';
 import { VideoSugCardComponent } from './components/cards/video-sug-card/video-sug-card.component';
+import { CommentsComponent } from './components/video/comments/comments.component';
+import { CommentCardComponent } from './components/video/comments/comment-card/comment-card.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { VideoSugCardComponent } from './components/cards/video-sug-card/video-s
     MainContentComponent,
     VideoDescriptionComponent,
     VideoSugCardComponent,
+    CommentsComponent,
+    CommentCardComponent,
   ],
   imports: [
     BrowserModule,

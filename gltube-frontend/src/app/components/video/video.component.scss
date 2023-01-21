@@ -8,8 +8,18 @@
 
     .cards {
         width: 30%;
+        min-width: 320px;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+
+        hr {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background: rgb(227, 227, 227);
+            border: none;
+            height: 3px;
+        }
     }
 }

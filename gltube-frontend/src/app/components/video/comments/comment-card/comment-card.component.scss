@@ -1,0 +1,103 @@
+.card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+        align-self: flex-start;
+    }
+
+    .container {
+        width: 100%;
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+            }
+    
+            p {
+                font-size: 12px;
+                opacity: .7;
+            }
+    
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    
+        .content {
+            width: 100%;
+            margin: 2px 0;
+        }
+    
+        .bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%;
+    
+            .reply-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+    
+                p {
+                    font-weight: 600;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+
+                i {
+                    font-size: 12px;
+                }
+            }
+    
+            .like-container {
+                display: flex;
+                position: relative;
+                justify-content: center;
+                gap: 10px;
+                align-items: center;
+                border: 1px solid #E7E7E7;
+                width: 80px;
+                height: 40px;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all .1s ease-out;
+    
+                &:hover {
+                    background: #eaeaea;
+                }
+    
+                i {
+                    color: #333;
+                }
+    
+                p {
+                    font-weight: 500;
+                }
+    
+                .vertical-line {
+                    width: 1px;
+                    height: 70%;
+                    background: #BCBCBC;
+                }
+            }
+        }
+    }
+
+}

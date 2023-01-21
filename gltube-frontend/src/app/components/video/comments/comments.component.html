@@ -1,0 +1,12 @@
+<section>
+    <p class="label">{{ quantity }} Comments</p>
+    <div class="comments">
+        <comment-card-component *ngFor="let comment of comments"
+        [author_profile_image]="comment.author_profile_img"
+        [author_channel_url]="comment.author_channel_url"
+        [author_username]="comment.author_username"
+        [date]="comment.date"
+        [likes]="comment.likes"
+        [content]="comment.content"></comment-card-component>
+    </div>
+</section>

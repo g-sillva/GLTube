@@ -84,7 +84,7 @@
             position: relative;
             justify-content: space-evenly;
             align-items: center;
-            background: #E7E7E7;
+            border: 1px solid #E7E7E7;
             padding: 8px 0;
             border-radius: 50px;
             width: 100%;
@@ -94,7 +94,7 @@
             transition: all .1s ease-out;
 
             &:hover {
-                background: #dadada;
+                background: #e2e2e2;
             }
 
             i {
