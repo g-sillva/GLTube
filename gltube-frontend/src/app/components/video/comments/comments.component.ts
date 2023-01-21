@@ -16,18 +16,30 @@ export class CommentsComponent {
       "date": "1 week ago",
       "likes": 3,
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      "replies": 2,
-      "reply_to": null,
-    },
-    {
-      "id": 2,
-      "author_profile_img": "https://i.pinimg.com/236x/08/53/37/085337bd3b8103cb15cf3a8c0b61701e.jpg",
-      "author_channel_url": "/",
-      "author_username": "Mateus Andrade",
-      "date": "1 week ago",
-      "likes": 3,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      "replies": 2,
+      "replies": [
+        {
+          "id": 4,
+          "author_profile_img": "https://i.pinimg.com/236x/08/53/37/085337bd3b8103cb15cf3a8c0b61701e.jpg",
+          "author_channel_url": "/",
+          "author_username": "Mateus Andrade",
+          "date": "1 week ago",
+          "likes": 3,
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+          "replies": [],
+          "reply_to": 1,
+        },
+        {
+          "id": 2,
+          "author_profile_img": "https://i.pinimg.com/236x/08/53/37/085337bd3b8103cb15cf3a8c0b61701e.jpg",
+          "author_channel_url": "/",
+          "author_username": "Mateus Andrade",
+          "date": "1 week ago",
+          "likes": 3,
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+          "replies": [],
+          "reply_to": 1,
+        },
+      ],
       "reply_to": null,
     },
     {
@@ -38,19 +50,8 @@ export class CommentsComponent {
       "date": "1 week ago",
       "likes": 3,
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      "replies": 2,
+      "replies": [],
       "reply_to": null,
-    },
-    {
-      "id": 4,
-      "author_profile_img": "https://i.pinimg.com/236x/08/53/37/085337bd3b8103cb15cf3a8c0b61701e.jpg",
-      "author_channel_url": "/",
-      "author_username": "Mateus Andrade",
-      "date": "1 week ago",
-      "likes": 3,
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      "replies": 2,
-      "reply_to": 1,
     },
     {
       "id": 5,
@@ -60,11 +61,23 @@ export class CommentsComponent {
       "date": "1 week ago",
       "likes": 3,
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      "replies": 2,
+      "replies": [],
       "reply_to": null,
     },
   ]
 
-  quantity = this.comments.length;
+  quantity = this.getCommentsQuantity();
+  isRepliesOpen = false;
+
+  getCommentsQuantity() {
+    let s = this.comments.length;
+    this.comments.forEach(x => s += x.replies.length);
+    return s;
+  }
+
+  handleShowReplies(ev: any) {
+    
+    this.isRepliesOpen = ev;
+  }
 
 }

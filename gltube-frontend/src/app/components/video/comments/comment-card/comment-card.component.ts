@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'comment-card-component',
@@ -23,4 +23,14 @@ export class CommentCardComponent {
 
   @Input() content = "...";
 
+  @Input() replies_qnt = 0;
+
+  @Output() showReplies = new EventEmitter<any>();
+
+  isShowRepliesOpen = false;
+
+  handleShowRepliesClick(ev: any) {
+    this.isShowRepliesOpen = !this.isShowRepliesOpen;
+    this.showReplies.emit(this.isShowRepliesOpen);
+  }
 }

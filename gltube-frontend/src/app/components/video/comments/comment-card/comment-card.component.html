@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{'reply-com': isReply}">
     <img [src]="author_profile_image" alt="">
     <div class="container">
         <div class="top">
@@ -11,8 +11,9 @@
         <p class="content">{{ content }}</p>
         <div class="bottom">
             <div class="reply-container">
-                <p>reply</p>
+                <p class="reply-btn">reply</p>
                 <i class="fa-solid fa-angle-down"></i>
+                <p *ngIf="replies_qnt > 0" (click)="handleShowRepliesClick($event)" [ngClass]="{'replies-btn-active': isShowRepliesOpen}">{{replies_qnt}} replies</p>
             </div>
             <div class="like-container">
                 <i class="fa-solid fa-hands-clapping"></i>

@@ -5,8 +5,8 @@
     width: 100%;
 
     img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         object-fit: cover;
         border-radius: 50%;
         align-self: flex-start;
@@ -59,11 +59,20 @@
                     font-weight: 600;
                     font-size: 14px;
                     font-weight: 400;
+
+                    &:hover {
+                        color: rgb(94, 94, 94);
+                    }
+                }
+
+                .replies-btn-active {
+                    font-weight: 600;
                 }
 
                 i {
                     font-size: 12px;
                 }
+
             }
     
             .like-container {
@@ -100,4 +109,8 @@
         }
     }
 
+}
+
+.reply-com {
+    padding: 1rem 0 1rem 3rem;
 }
