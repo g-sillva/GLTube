@@ -14,13 +14,15 @@ import { SuggestedVideosComponent } from './components/suggested-videos/suggeste
 import { PopBigCardComponent } from './components/cards/pop-big-card/pop-big-card.component';
 import { PopularVideosComponent } from './components/popular-videos/popular-videos.component';
 import { TagsFilterComponent } from './components/suggested-videos/tags-filter/tags-filter.component';
-import { VideoComponent } from './components/video/video.component';
-import { MainContentComponent } from './components/video/main-content/main-content.component';
-import { VideoDescriptionComponent } from './components/video/video-description/video-description.component';
+import { VideoComponent } from './pages/video/video.component';
+import { MainContentComponent } from './pages/video/main-content/main-content.component';
+import { VideoDescriptionComponent } from './pages/video/video-description/video-description.component';
 import { VideoSugCardComponent } from './components/cards/video-sug-card/video-sug-card.component';
-import { CommentsComponent } from './components/video/comments/comments.component';
-import { CommentCardComponent } from './components/video/comments/comment-card/comment-card.component';
-import { AddCommentComponent } from './components/video/comments/add-comment/add-comment.component';
+import { CommentsComponent } from './pages/video/comments/comments.component';
+import { CommentCardComponent } from './pages/video/comments/comment-card/comment-card.component';
+import { AddCommentComponent } from './pages/video/comments/add-comment/add-comment.component';
+import { HomeComponent } from './pages/home/home.component';
+import { VideosServices } from './services/videos.services';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,14 @@ import { AddCommentComponent } from './components/video/comments/add-comment/add
     CommentsComponent,
     CommentCardComponent,
     AddCommentComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [VideosServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

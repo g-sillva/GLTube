@@ -1,7 +1,15 @@
 <div class="container">
     <div class="main">
-        <main-content-component></main-content-component>
-        <video-description-component></video-description-component>
+        <main-content-component
+            [video_src]="video.video_src"
+            [title]="video.title"
+            [author_prof_img]="video.author_prof_img"
+            [author_username]="video.author_username"
+            [author_followers]="video.author_followers"
+            [views]="video.views"
+            [likes]="video.likes"
+        ></main-content-component>
+        <video-description-component [description]="video.description"></video-description-component>
         <comments-component></comments-component>
     </div>
     <div class="cards">
