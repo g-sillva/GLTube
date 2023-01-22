@@ -1,0 +1,17 @@
+<section>
+    <div class="top">
+        <img [src]="profile.profile_picture" alt="">
+        <h3>{{ profile.username }}</h3>
+        <div class="profile_info">
+            <p>{{ profile.followers.length }} Followers</p>
+            <span></span>
+            <p>{{ profile.videos.length }} Videos</p>
+        </div>
+        <button>FOLLOW</button>
+    </div>
+    <ul>
+        <li *ngFor="let item of selectable_items; index as id" 
+            [ngClass]="{'selected': selected_item == id}"
+            (click)="handleSelectItem(id)">{{ item }}</li>
+    </ul>
+</section>

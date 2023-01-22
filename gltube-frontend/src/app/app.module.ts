@@ -23,6 +23,9 @@ import { CommentCardComponent } from './pages/video/comments/comment-card/commen
 import { AddCommentComponent } from './pages/video/comments/add-comment/add-comment.component';
 import { HomeComponent } from './pages/home/home.component';
 import { VideosServices } from './services/videos.services';
+import { ProfilesServices } from './services/profiles.services';
+import { VideosComponent } from './pages/profile/videos/videos.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,13 +48,15 @@ import { VideosServices } from './services/videos.services';
     CommentCardComponent,
     AddCommentComponent,
     HomeComponent,
+    VideosComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [VideosServices],
+  providers: [VideosServices, ProfilesServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
