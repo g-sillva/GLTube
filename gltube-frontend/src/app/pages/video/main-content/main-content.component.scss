@@ -82,19 +82,19 @@
         .like-container {
             display: flex;
             position: relative;
-            justify-content: space-evenly;
+            justify-content: center;
+            gap: 10px;
             align-items: center;
-            border: 1px solid #E7E7E7;
-            padding: 8px 0;
-            border-radius: 50px;
-            width: 100%;
-            max-width: 80px;
             margin-top: 10px;
+            border: 1px solid #E7E7E7;
+            padding: 0 10px;
+            height: 40px;
+            border-radius: 50px;
             cursor: pointer;
             transition: all .1s ease-out;
 
             &:hover {
-                background: #e2e2e2;
+                background: #eaeaea;
             }
 
             i {
@@ -107,8 +107,7 @@
             }
 
             .vertical-line {
-                position: absolute;
-                width: 2px;
+                width: 1px;
                 height: 70%;
                 background: #BCBCBC;
             }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+
+  constructor (private router: Router) {}
 
   isSidebarExpanded = false;
   selectedItem = 0;
@@ -22,7 +25,7 @@ export class SidebarComponent {
       {
         "icon": "assets/display.svg",
         "label": "Subscriptions",
-        "url": "/",
+        "url": "/subscriptions",
         "selected": false,
       },
       ]
@@ -32,25 +35,25 @@ export class SidebarComponent {
         {
           "icon": "assets/camera.svg",
           "label": "Create",
-          "url": "/",
+          "url": "/create",
           "selected": false
         },
         {
           "icon": "assets/clock-history.svg",
           "label": "History",
-          "url": "/",
+          "url": "/history",
           "selected": false
         },
         {
           "icon": "assets/list-task.svg",
           "label": "My list",
-          "url": "/",
+          "url": "/my_list",
           "selected": false
         },
         {
           "icon": "assets/hand-thumbs-up.svg",
           "label": "Liked videos",
-          "url": "/",
+          "url": "/liked_videos",
           "selected": false
         }
       ]
@@ -58,10 +61,11 @@ export class SidebarComponent {
   ]
 
   handleSelectItem(listInd: number, itemInd: number) {
-    this.isSidebarExpanded = true;
+    this.isSidebarExpanded = false;
     this.items_list[0].items.map(x => x.selected = false);
     this.items_list[1].items.map(x => x.selected = false);
     this.items_list[listInd].items[itemInd].selected = true;
+    this.router.navigate([this.items_list[listInd].items[itemInd].url]);
   }
 }
 

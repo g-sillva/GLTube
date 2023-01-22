@@ -6,7 +6,10 @@
     </div>
     <div *ngFor="let list of items_list; index as listIndex" class="lists">
         <ul>
-            <li *ngFor="let item of list.items; index as itemIndex" (click)="handleSelectItem(listIndex, itemIndex)" [ngClass]="{'active': item.selected}">
+            <li *ngFor="let item of list.items; index as itemIndex" 
+                (click)="handleSelectItem(listIndex, itemIndex)" 
+                [ngClass]="{'active': item.selected}"
+                >
                 <div class="icon-wrapper">
                     <img [src]="item.icon" alt="">
                 </div>

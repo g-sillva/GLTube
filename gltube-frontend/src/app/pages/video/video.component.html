@@ -10,7 +10,7 @@
             [likes]="video.likes"
         ></main-content-component>
         <video-description-component [description]="video.description"></video-description-component>
-        <comments-component></comments-component>
+        <comments-component [comments]="video.comments"></comments-component>
     </div>
     <div class="cards">
         <video-sug-card-component [isFirst]="true"></video-sug-card-component>

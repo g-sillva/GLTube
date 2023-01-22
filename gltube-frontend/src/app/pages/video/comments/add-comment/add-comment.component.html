@@ -1,7 +1,7 @@
-<div class="reply-form-container">
+<div class="reply-form-container" [ngClass]="{'add_reply': is_reply }">
     <a [href]="user_channel_url" target="_blank"><img [src]="user_profile_image" alt=""></a>
     <form>
-        <input [(ngModel)]="reply_text" type="text" placeholder="Type something..." name="reply_text">
+        <input [(ngModel)]="text" type="text" placeholder="Type something..." name="text">
         <div class="buttons">
             <button class="cancel-btn" (click)="handleCancel()">Cancel</button>
             <button class="comment-btn" (click)="handleSuccess()">{{ successLabel }}</button>

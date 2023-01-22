@@ -2,7 +2,8 @@
     <p class="label">{{ quantity }} Comments</p>
     <div class="comments">
         <add-comment-component 
-        (onSuccess)="handleSuccessClick()"></add-comment-component>
+        (onSuccess)="handleSuccessClick()"
+        [is_reply]="false"></add-comment-component>
         <div *ngFor="let comment of comments">
             <comment-card-component 
             [author_profile_image]="comment.author_profile_img"

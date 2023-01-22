@@ -27,5 +27,6 @@
     <add-comment-component 
     *ngIf="isReplyCommentOpen" 
     (onSuccess)="handleSuccessClick()"
-    successLabel="Reply"></add-comment-component>
+    successLabel="Reply"
+    [is_reply]="true"></add-comment-component>
 </div>

@@ -7,7 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class AddCommentComponent {
 
-  reply_text = "";
+  text = "";
+
+  @Input() is_reply = false;
 
   @Input() successLabel = "Comment";
   
@@ -20,7 +22,7 @@ export class AddCommentComponent {
   @Output() onSuccess = new EventEmitter();
 
   handleCancel() {
-    this.reply_text = "";
+    this.text = "";
   }
 
   handleSuccess() {

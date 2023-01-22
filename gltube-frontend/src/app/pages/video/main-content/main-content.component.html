@@ -15,11 +15,11 @@
             <button>FOLLOW</button>
         </div>
         <div class="video-stats">
-            <p class="views">{{ views }} views</p>
-            <div class="like-container">
+            <p class="views">{{ views | thousandSuffix : 1 }} views</p>
+            <div class="like-container" (click)="handleLikeClick()">
                 <i class="fa-solid fa-hands-clapping"></i>
                 <span class="vertical-line"></span>
-                <p>{{ likes }}</p>
+                <p>{{ likes | thousandSuffix : 1 }}</p>
             </div>
         </div>
     </div>

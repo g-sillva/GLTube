@@ -20,4 +20,8 @@ export class MainContentComponent {
   @Input() views = 0;
 
   @Input() likes = 0;
+
+  handleLikeClick() {
+    // TO DO: Like functionality 
+  }
 }
