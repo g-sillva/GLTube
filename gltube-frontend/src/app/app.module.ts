@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProfileComponent } from './components/header/profile/profile.component';
+import { HeaderProfileComponent } from './components/header/profile/profile.component';
 import { ThousandSuffixPipe } from './pipes/ThousandSufixPipe.pipe';
 import { SearchbarComponent } from './components/header/searchbar/searchbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -14,24 +14,25 @@ import { SuggestedVideosComponent } from './components/suggested-videos/suggeste
 import { PopBigCardComponent } from './components/cards/pop-big-card/pop-big-card.component';
 import { PopularVideosComponent } from './components/popular-videos/popular-videos.component';
 import { TagsFilterComponent } from './components/suggested-videos/tags-filter/tags-filter.component';
-import { VideoComponent } from './pages/video/video.component';
-import { MainContentComponent } from './pages/video/main-content/main-content.component';
-import { VideoDescriptionComponent } from './pages/video/video-description/video-description.component';
+import { VideoPage } from './pages/video/video.page';
 import { VideoSugCardComponent } from './components/cards/video-sug-card/video-sug-card.component';
-import { CommentsComponent } from './pages/video/comments/comments.component';
-import { CommentCardComponent } from './pages/video/comments/comment-card/comment-card.component';
-import { AddCommentComponent } from './pages/video/comments/add-comment/add-comment.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomePage } from './pages/home-page/home.page';
 import { VideosServices } from './services/videos.services';
 import { ProfilesServices } from './services/profiles.services';
-import { VideosComponent } from './pages/profile/videos/videos.component';
 import { CommonModule } from '@angular/common';
+import { ProfilePage } from './pages/profile/profile.page';
+import { ProfileVideosContainerComponent } from './components/profile-videos-container/profile-videos-container.component';
+import { VideoCommentsComponent } from './components/video-comments/video-comments.component';
+import { CommentCardComponent } from './components/video-comments/comment-card/comment-card.component';
+import { AddCommentComponent } from './components/video-comments/add-comment/add-comment.component';
+import { VideoDescriptionComponent } from './components/video-description/video-description.component';
+import { VideoMainComponent } from './components/video-main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProfileComponent,
+    HeaderProfileComponent,
     ThousandSuffixPipe,
     SearchbarComponent,
     SidebarComponent,
@@ -40,15 +41,16 @@ import { CommonModule } from '@angular/common';
     PopBigCardComponent,
     PopularVideosComponent,
     TagsFilterComponent,
-    VideoComponent,
-    MainContentComponent,
+    VideoMainComponent,
     VideoDescriptionComponent,
     VideoSugCardComponent,
-    CommentsComponent,
+    VideoCommentsComponent,
     CommentCardComponent,
     AddCommentComponent,
-    HomeComponent,
-    VideosComponent,
+    ProfileVideosContainerComponent,
+    ProfilePage,
+    HomePage,
+    VideoPage,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,6 @@ import { CommonModule } from '@angular/common';
     FormsModule,
   ],
   providers: [VideosServices, ProfilesServices],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'comments-component',
-  templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.scss']
+  selector: 'video-comments-component',
+  templateUrl: './video-comments.component.html',
+  styleUrls: ['./video-comments.component.scss']
 })
-export class CommentsComponent implements OnInit {
+export class VideoCommentsComponent implements OnInit {
 
   @Input() comments: any = [];
 

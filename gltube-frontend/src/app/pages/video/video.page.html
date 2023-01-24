@@ -1,6 +1,6 @@
 <div class="container">
     <div class="main">
-        <main-content-component
+        <video-main-component
             [video_src]="video.video_src"
             [title]="video.title"
             [author_prof_img]="video.author_prof_img"
@@ -8,13 +8,14 @@
             [author_followers]="video.author_followers"
             [views]="video.views"
             [likes]="video.likes"
-        ></main-content-component>
+        ></video-main-component>
         <video-description-component [description]="video.description"></video-description-component>
-        <comments-component [comments]="video.comments"></comments-component>
+        <video-comments-component [comments]="video.comments"></video-comments-component>
     </div>
     <div class="cards">
         <video-sug-card-component [isFirst]="true"></video-sug-card-component>
         <hr>
+
         <video-sug-card-component></video-sug-card-component>
         <video-sug-card-component></video-sug-card-component>
         <video-sug-card-component></video-sug-card-component>

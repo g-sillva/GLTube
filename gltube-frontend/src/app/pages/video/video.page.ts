@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { VideosServices } from 'src/app/services/videos.services';
 
 @Component({
-  selector: 'app-video-component',
-  templateUrl: './video.component.html',
-  styleUrls: ['./video.component.scss']
+  selector: 'app-video-page',
+  templateUrl: './video.page.html',
+  styleUrls: ['./video.page.scss']
 })
-export class VideoComponent implements OnInit {
+export class VideoPage implements OnInit {
 
   video_id: any;
   video: any;

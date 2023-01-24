@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProfilesServices } from 'src/app/services/profiles.services';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-profile-page',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfilePage implements OnInit {
 
   profile_id: any;
   profile: any;
@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.profile_id = this.route.snapshot.paramMap.get("id");
     this.profile = this.profile_service.profiles.find(x => x.id == this.profile_id);
+    
     if (this.profile === undefined) {
       this.router.navigate(["/"]);
     }

@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'main-content-component',
-  templateUrl: './main-content.component.html',
-  styleUrls: ['./main-content.component.scss']
+  selector: 'video-main-component',
+  templateUrl: './main.component.html',
+  styleUrls: ['./main.component.scss']
 })
-export class MainContentComponent {
+export class VideoMainComponent {
 
   @Input() video_src = "";
 

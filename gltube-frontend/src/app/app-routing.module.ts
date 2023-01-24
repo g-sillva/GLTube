@@ -1,20 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { VideoComponent } from './pages/video/video.component';
+import { HomePage } from './pages/home-page/home.page';
+import { ProfilePage } from './pages/profile/profile.page';
+import { VideoPage } from './pages/video/video.page';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'video/:id', component: VideoComponent },
-  { path: 'profile/:id', component: ProfileComponent },
-  { path: '**', component: HomeComponent },
+  { path: '', component: HomePage },
+  { path: 'video/:id', component: VideoPage },
+  { path: 'profile/:id', component: ProfilePage },
+  { path: '**', component: HomePage },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), CommonModule],
-  declarations: [ProfileComponent],
+  imports: [RouterModule.forRoot(routes)],
+  declarations: [],
   exports: [RouterModule]
 })
 
