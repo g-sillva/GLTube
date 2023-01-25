@@ -26,19 +26,22 @@ export class ProfilesServices {
             ],
             "followers": [],
             "videos": [
-                {
+              {
                 "id": 1,
                 "title": "debate com o marselo careca ft. Felca",
                 "thumbnail_url": "https://i3.ytimg.com/vi/LkwrJZeAGjw/hqdefault.jpg",
                 "video_src": "",
-                "author_prof_img": "https://yt3.ggpht.com/ytc/AMLnZu_nwiiYo4HsiTYf9vOrmjW1OWFqZi4lA7lk_kfSPg=s48-c-k-c0x00ffffff-no-rj",
-                "author_username": "orochidois",
-                "author_followers": 1470000,
+                "author": {
+                  "id": 1,
+                  "username": "Mateus Andrade",
+                  "profile_picture": "https://pfps.gg/assets/pfps/1148-egirl-neutral-pfp.png",
+                  "followers": [],
+                },
                 "date": "2022-09-10 22:12:42",
                 "views": 12003,
                 "likes": 4650,
                 "tags": ['Comedy'],
-                "length": "01:15:42",
+                "length": "12:04",
                 "description": `In this video, I’ll show you video title. Enjoy! 
       
       Add here a few paragraphs about your video
@@ -111,7 +114,7 @@ export class ProfilesServices {
                     "reply_to": null,
                   },
                 ]
-              },
+              }
             ]
         }
     ]

@@ -3,13 +3,6 @@
     <div class="videos-container">
         <basic-card-component 
         *ngFor="let video of displayedVideos"
-        [video_id]="video.id"
-        [thumbnail_url]="video.thumbnail_url"
-        [video_title]="video.title"
-        [video_length]="video.length"
-        [user_profile_img_url]="video.author_prof_img"
-        [user_username]="video.author_username"
-        [video_views]="video.views"
-        [video_date]="video.date"></basic-card-component>
+        [video]="video"></basic-card-component>
     </div>
 </section>

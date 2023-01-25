@@ -6,6 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./profile-videos-container.component.scss']
 })
 export class ProfileVideosContainerComponent {
+
   
   @Input() videos: any;
+
 }

@@ -1,14 +1,14 @@
-<a routerLink="/video/{{ video_id }}" class="card">
+<a routerLink="/video/{{ video.id }}" class="card">
     <div class="thumbnail-container">
-        <img [src]="thumbnail_url" alt="">
-        <p>{{ video_length }}</p>
+        <img [src]="video.thumbnail_url" alt="">
+        <p>{{ video.ength }}</p>
     </div>
-    <h2>{{ video_title }}</h2>
+    <h2>{{ video.title }}</h2>
     <div class="info">
-        <img [src]="user_profile_img_url" alt="">
+        <a routerLink="/profile/{{ video.author.id }}"><img [src]="video.author.profile_picture" alt=""></a>
         <div class="data">
-            <h3>{{ user_username }}</h3>
-            <p>{{ video_views | thousandSuffix : 1 }} Views ° {{ video_date }}</p>
+            <a routerLink="/profile/{{ video.author.id }}"><h3>{{ video.author.username }}</h3></a>
+            <p>{{ video.views | thousandSuffix : 1 }} Views ° {{ video.date }}</p>
         </div>
     </div>
 </a>

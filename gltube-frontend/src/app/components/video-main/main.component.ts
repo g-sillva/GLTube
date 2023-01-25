@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'video-main-component',
@@ -11,11 +12,7 @@ export class VideoMainComponent {
 
   @Input() title = "Title...";
 
-  @Input() author_prof_img = "assets/user-icon.png";
-
-  @Input() author_username = "User";
-
-  @Input() author_followers = 0;
+  @Input() author: any;
 
   @Input() views = 0;
 

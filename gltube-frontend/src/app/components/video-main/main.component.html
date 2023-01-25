@@ -7,11 +7,13 @@
     <h2>{{ title }}</h2>
     <div class="video-author-container">
         <div class="author-info">
-            <img [src]="author_prof_img" alt="">
-            <div>
-                <h3>{{ author_username }}</h3>
-                <p>{{ author_followers | thousandSuffix : 1 }} Followers</p>
-            </div>
+            <a routerLink="/profile/{{ author.id }}">
+                <img [src]="author.profile_picture" alt="">
+                <div>
+                    <h3>{{ author.username }}</h3>
+                    <p>{{ author.followers.length | thousandSuffix : 1 }} Followers</p>
+                </div>
+            </a>
             <button>FOLLOW</button>
         </div>
         <div class="video-stats">

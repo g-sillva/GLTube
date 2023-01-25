@@ -1,12 +1,5 @@
 <section class="profile-videos-section">
     <basic-card-component 
     *ngFor="let video of videos"
-    [video_id]="video.id"
-    [thumbnail_url]="video.thumbnail_url"
-    [video_length]="video.length"
-    [video_title]="video.title"
-    [user_profile_img_url]="video.author_prof_img"
-    [user_username]="video.author_username"
-    [video_views]="video.views"
-    [video_date]="video.date"></basic-card-component>
+    [video]="video"></basic-card-component>
 </section>
