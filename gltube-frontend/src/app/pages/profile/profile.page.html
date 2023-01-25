@@ -14,6 +14,6 @@
             [ngClass]="{'selected': selected_item == id}"
             (click)="handleSelectItem(id)">{{ item }}</li>
     </ul>
-    <app-profile-videos-container-component [videos]="profile.videos"></app-profile-videos-container-component>
-    <app-profile-about [profile]="profile"></app-profile-about>
+    <app-profile-videos-container-component *ngIf="selected_item === 0" [videos]="profile.videos"></app-profile-videos-container-component>
+    <app-profile-about *ngIf="selected_item === 1" [profile]="profile"></app-profile-about>
 </section>
