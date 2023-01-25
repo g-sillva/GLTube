@@ -9,18 +9,22 @@ export class ProfilesServices {
             "social_media": [
                 {
                     "name": "Instagram",
+                    "fa_icon": "fa-brands fa-instagram",
                     "link": "/"
                 },
                 {
                     "name": "GooglePlus",
+                    "fa_icon": "fa-brands fa-google-plus-g",
                     "link": "/"
                 },
                 {
                     "name": "Twitter",
+                    "fa_icon": "fa-brands fa-twitter",
                     "link": "/"
                 },
                 {
                     "name": "Portfolio",
+                    "fa_icon": "fa-solid fa-link",
                     "link": "/"
                 },
             ],

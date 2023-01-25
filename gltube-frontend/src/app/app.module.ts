@@ -27,6 +27,7 @@ import { CommentCardComponent } from './components/video-comments/comment-card/c
 import { AddCommentComponent } from './components/video-comments/add-comment/add-comment.component';
 import { VideoDescriptionComponent } from './components/video-description/video-description.component';
 import { VideoMainComponent } from './components/video-main/main.component';
+import { ProfileAboutComponent } from './components/profile-about/profile-about.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { VideoMainComponent } from './components/video-main/main.component';
     ProfilePage,
     HomePage,
     VideoPage,
+    ProfileAboutComponent,
   ],
   imports: [
     BrowserModule,

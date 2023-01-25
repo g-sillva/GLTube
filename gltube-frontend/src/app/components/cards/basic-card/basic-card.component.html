@@ -1,7 +1,7 @@
-<a routerLink="/video/{{ video.id }}" class="card">
+<a routerLink="/video/{{ video.author.id }}" class="card">
     <div class="thumbnail-container">
         <img [src]="video.thumbnail_url" alt="">
-        <p>{{ video.ength }}</p>
+        <p>{{ video.length }}</p>
     </div>
     <h2>{{ video.title }}</h2>
     <div class="info">

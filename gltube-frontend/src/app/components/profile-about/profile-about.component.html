@@ -1,0 +1,10 @@
+<section>
+    <p>{{ profile.about }}</p>
+    <ul>
+        <li *ngFor="let social of profile.social_media">
+            <a [href]="social.link" target="_blank">
+                <i [class]="social.fa_icon"></i>
+            </a>
+        </li>
+    </ul>
+</section>
