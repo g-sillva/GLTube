@@ -3,9 +3,9 @@
         <img [src]="profile.profile_picture" alt="">
         <h3>{{ profile.username }}</h3>
         <div class="profile_info">
-            <p>{{ profile.followers.length }} Followers</p>
+            <p>{{ profile.followers.length | thousandSuffix : 1 }} Followers</p>
             <span></span>
-            <p>{{ profile.videos.length }} Videos</p>
+            <p>{{ profile.videos.length | thousandSuffix : 1 }} Videos</p>
         </div>
         <button>FOLLOW</button>
     </div>
@@ -14,5 +14,5 @@
             [ngClass]="{'selected': selected_item == id}"
             (click)="handleSelectItem(id)">{{ item }}</li>
     </ul>
-    <app-profile-videos-container-component></app-profile-videos-container-component>
+    <app-profile-videos-container-component [videos]="profile.videos"></app-profile-videos-container-component>
 </section>

@@ -38,7 +38,7 @@ export class ProfilesServices {
                 "views": 12003,
                 "likes": 4650,
                 "tags": ['Comedy'],
-                "length": "12:04",
+                "length": "01:15:42",
                 "description": `In this video, I’ll show you video title. Enjoy! 
       
       Add here a few paragraphs about your video

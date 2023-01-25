@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class BasicCardComponent {
 
   @Input()
-  video_id = "0";
+  video_id = 0;
 
   @Input()
   thumbnail_url = "https://i1.sndcdn.com/artworks-F3pY0UrwsxcGlZs8-zrn5ZQ-t500x500.jpg";

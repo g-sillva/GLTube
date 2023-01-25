@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-profile-videos-container-component',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile-videos-container.component.scss']
 })
 export class ProfileVideosContainerComponent {
-
+  
+  @Input() videos: any;
 }
