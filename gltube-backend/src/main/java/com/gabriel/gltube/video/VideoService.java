@@ -3,11 +3,13 @@ package com.gabriel.gltube.video;
 import com.gabriel.gltube.user.User;
 import com.gabriel.gltube.user.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -52,7 +54,7 @@ public class VideoService {
 
         v.setTitle(title);
         v.setDescription(description);
-        v.setDate(new Date());
+        v.setDate(LocalDate.now());
         v.setLikes(0);
         v.setViews(0);
         v.setVideo_file(file.getBytes());
