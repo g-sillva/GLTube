@@ -37,7 +37,6 @@ public class LoadDatabase {
     CommandLineRunner initDatabase(UserRepository userRepository,
                                    RoleRepository roleRepository,
                                    SocialMediaRepository socialMediaRepository,
-                                   FollowerRepository followerRepository,
                                    CommentRepository commentRepository,
                                    VideoRepository videoRepository) {
         Role user_role = new Role(1, ERole.ROLE_USER);
@@ -56,7 +55,6 @@ public class LoadDatabase {
                 "About here",
                 new ArrayList<>(List.of()),
                 new ArrayList<>(List.of()),
-                new ArrayList<>(List.of()),
                 new ArrayList<>(List.of(twitter, instagram)),
                 new HashSet<>(List.of(user_role)));
 
@@ -69,12 +67,8 @@ public class LoadDatabase {
                 "About here",
                 new ArrayList<>(List.of()),
                 new ArrayList<>(List.of()),
-                new ArrayList<>(List.of()),
-                new ArrayList<>(List.of(twitter, instagram, portfolio)),
+                new ArrayList<>(List.of(portfolio)),
                 new HashSet<>(List.of(user_role, admin_role)));
-
-        Follower follower1 = new Follower(1L, user1, user2);
-        Follower follower2 = new Follower(2L, user2, user1);
 
         Video video1 = new Video(1L,
                 "Title from video 1",
@@ -119,31 +113,26 @@ public class LoadDatabase {
                 LocalDate.now(),
                 0,
                 "This is a reply!",
-                video1,
                 new ArrayList<>(List.of()),
                 user1);
 
-        Comment comment2 = new Comment(1L,
+        Comment comment2 = new Comment(2L,
                 LocalDate.now(),
                 2,
                 "Awesome!",
-                video1,
                 new ArrayList<>(List.of()),
                 user2);
 
-        Comment comment3 = new Comment(1L,
+        Comment comment3 = new Comment(3L,
                 LocalDate.now(),
                 1,
                 "This video is great!",
-                video1,
                 new ArrayList<>(List.of(comment1)),
                 user2);
 
+        video1.addComment(comment1);
         video1.addComment(comment3);
-        video3.addComment(comment2);
-
-        user1.getFollowers().add(follower1);
-        user2.getFollowers().add(follower2);
+        video2.addComment(comment2);
 
         return args -> {
             log.info("Preloading " + socialMediaRepository.save(twitter));
@@ -151,16 +140,14 @@ public class LoadDatabase {
             log.info("Preloading " + socialMediaRepository.save(portfolio));
             log.info("Preloading " + roleRepository.save(user_role));
             log.info("Preloading " + roleRepository.save(admin_role));
-            log.info("Preloading " + followerRepository.save(follower1));
-            log.info("Preloading " + followerRepository.save(follower2));
             log.info("Preloading " + userRepository.save(user1));
             log.info("Preloading " + userRepository.save(user2));
-            log.info("Preloading " + videoRepository.save(video1));
-            log.info("Preloading " + videoRepository.save(video2));
-            log.info("Preloading " + videoRepository.save(video3));
             log.info("Preloading " + commentRepository.save(comment1));
             log.info("Preloading " + commentRepository.save(comment2));
             log.info("Preloading " + commentRepository.save(comment3));
+            log.info("Preloading " + videoRepository.save(video1));
+            log.info("Preloading " + videoRepository.save(video3));
+            log.info("Preloading " + videoRepository.save(video2));
         };
     }
 }
