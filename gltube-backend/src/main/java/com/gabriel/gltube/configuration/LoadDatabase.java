@@ -2,8 +2,6 @@ package com.gabriel.gltube.configuration;
 
 import com.gabriel.gltube.comment.Comment;
 import com.gabriel.gltube.comment.CommentRepository;
-import com.gabriel.gltube.follower.Follower;
-import com.gabriel.gltube.follower.FollowerRepository;
 import com.gabriel.gltube.role.ERole;
 import com.gabriel.gltube.role.Role;
 import com.gabriel.gltube.role.RoleRepository;
@@ -17,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;

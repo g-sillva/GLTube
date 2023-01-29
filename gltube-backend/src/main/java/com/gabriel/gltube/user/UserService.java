@@ -1,5 +1,6 @@
 package com.gabriel.gltube.user;
 
+import com.gabriel.gltube.social_media.SocialMedia;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -62,9 +63,15 @@ public class UserService {
         return null;
     }
 
-    // FOLLOW OTHER USER
+    // TODO: FOLLOW OTHER USER
     void followUser(long u_id, long t_id) {
         User cur_user = userRepository.findById(u_id).get();
         User tar_user = userRepository.findById(t_id).get();
+    }
+
+    // GET USERS SOCIAL MEDIAS
+    List<SocialMedia> getUserSocialMedias(Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        return user.map(User::getSocialMedia).orElse(null);
     }
 }

@@ -1,5 +1,6 @@
 package com.gabriel.gltube.user;
 
+import com.gabriel.gltube.social_media.SocialMedia;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -63,5 +64,12 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     ResponseEntity<?> followUser(@RequestParam long u_id, @RequestParam long t_id) {
         return new ResponseEntity<>(u_id + ", " + t_id, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/socialmedias", params = { "id" })
+    ResponseEntity<?> getUserSocials(@RequestParam Long id) {
+        List<SocialMedia> socialMediaList = userService.getUserSocialMedias(id);
+        if (socialMediaList != null) return new ResponseEntity<>(socialMediaList, HttpStatus.OK);
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 }
