@@ -1,7 +1,5 @@
 package com.gabriel.gltube.configuration;
 
-import com.gabriel.gltube.comment.Comment;
-import com.gabriel.gltube.comment.CommentRepository;
 import com.gabriel.gltube.role.ERole;
 import com.gabriel.gltube.role.Role;
 import com.gabriel.gltube.role.RoleRepository;
@@ -34,7 +32,6 @@ public class LoadDatabase {
     CommandLineRunner initDatabase(UserRepository userRepository,
                                    RoleRepository roleRepository,
                                    SocialMediaRepository socialMediaRepository,
-                                   CommentRepository commentRepository,
                                    VideoRepository videoRepository) {
         Role user_role = new Role(1, ERole.ROLE_USER);
         Role admin_role = new Role(2, ERole.ROLE_ADMIN);
@@ -106,31 +103,6 @@ public class LoadDatabase {
                 new ArrayList<>(List.of()),
                 user2);
 
-        Comment comment1 = new Comment(1L,
-                LocalDate.now(),
-                0,
-                "This is a reply!",
-                new ArrayList<>(List.of()),
-                user1);
-
-        Comment comment2 = new Comment(2L,
-                LocalDate.now(),
-                2,
-                "Awesome!",
-                new ArrayList<>(List.of()),
-                user2);
-
-        Comment comment3 = new Comment(3L,
-                LocalDate.now(),
-                1,
-                "This video is great!",
-                new ArrayList<>(List.of(comment1)),
-                user2);
-
-        video1.addComment(comment1);
-        video1.addComment(comment3);
-        video2.addComment(comment2);
-
         return args -> {
             log.info("Preloading " + socialMediaRepository.save(twitter));
             log.info("Preloading " + socialMediaRepository.save(instagram));
@@ -139,9 +111,6 @@ public class LoadDatabase {
             log.info("Preloading " + roleRepository.save(admin_role));
             log.info("Preloading " + userRepository.save(user1));
             log.info("Preloading " + userRepository.save(user2));
-            log.info("Preloading " + commentRepository.save(comment1));
-            log.info("Preloading " + commentRepository.save(comment2));
-            log.info("Preloading " + commentRepository.save(comment3));
             log.info("Preloading " + videoRepository.save(video1));
             log.info("Preloading " + videoRepository.save(video3));
             log.info("Preloading " + videoRepository.save(video2));

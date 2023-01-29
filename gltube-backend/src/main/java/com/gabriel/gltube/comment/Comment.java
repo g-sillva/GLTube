@@ -25,11 +25,32 @@ public class Comment {
     private int likes;
     private String content;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Comment> replies = new ArrayList<>();
+    @ManyToOne
+    private Comment parent;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "parent")
+    private List<Comment> children = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
     private User author;
+
+    public void addChildren(Comment comment) {
+        comment.setParent(this);
+        children.add(comment);
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", date=" + date +
+                ", likes=" + likes +
+                ", content='" + content + '\'' +
+                ", parent=" + parent +
+                ", children=" + children +
+                ", author=" + author +
+                '}';
+    }
 
     public Long getId() {
         return id;
@@ -63,12 +84,12 @@ public class Comment {
         this.content = content;
     }
 
-    public List<Comment> getReplies() {
-        return replies;
+    public List<Comment> getChildren() {
+        return children;
     }
 
-    public void setReplies(List<Comment> replies) {
-        this.replies = replies;
+    public void setChildren(List<Comment> children) {
+        this.children = children;
     }
 
     public User getAuthor() {
@@ -77,5 +98,13 @@ public class Comment {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public Comment getParent() {
+        return parent;
+    }
+
+    public void setParent(Comment parent) {
+        this.parent = parent;
     }
 }
