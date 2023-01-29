@@ -42,7 +42,10 @@ public class Video {
     private List<String> tags;
     private int length;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "videos_comments",
+            joinColumns = @JoinColumn(name = "video_id"),
+            inverseJoinColumns = @JoinColumn(name = "comment_id"))
     private List<Comment> comments = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)

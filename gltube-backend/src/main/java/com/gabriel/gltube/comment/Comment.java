@@ -21,6 +21,7 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private LocalDate date = LocalDate.now();
     private int likes;
     private String content;
@@ -37,19 +38,6 @@ public class Comment {
     public void addChildren(Comment comment) {
         comment.setParent(this);
         children.add(comment);
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + id +
-                ", date=" + date +
-                ", likes=" + likes +
-                ", content='" + content + '\'' +
-                ", parent=" + parent +
-                ", children=" + children +
-                ", author=" + author +
-                '}';
     }
 
     public Long getId() {
